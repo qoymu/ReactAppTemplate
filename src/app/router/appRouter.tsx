@@ -1,7 +1,7 @@
 import { Navigate, createHashRouter } from 'react-router-dom';
 import { ReactElement } from 'react';
-
-import { DefaultLayout } from '../../shared/layouts';
+import { useAppSelector } from '@hooks/useAppSelector';
+import { DefaultLayout } from '../../shared/ui/layouts';
 import { MainPage } from '@pages/MainPage';
 import { AdditionalPage } from '@pages/AdditionalPage';
 import { AdditionalDetailPage } from '@pages/AdditionalDetailPage';
@@ -12,7 +12,8 @@ type WrapperProps = {
 };
 
 const GuestGuard = ({ children }: WrapperProps) => {
-  const isAuthorized = localStorage.getItem('auth');
+  // Если не авторизован - редирект на страницу авторизации
+  const { isAuthorized } = useAppSelector((state) => state.auth);
 
   if (!isAuthorized) return <Navigate to="/login" />;
 
@@ -20,7 +21,8 @@ const GuestGuard = ({ children }: WrapperProps) => {
 };
 
 const AuthGuard = ({ children }: WrapperProps) => {
-  const isAuthorized = localStorage.getItem('auth');
+  // Если авторизован - редирект на главную
+  const { isAuthorized } = useAppSelector((state) => state.auth);
 
   if (isAuthorized) return <Navigate to="/" />;
 

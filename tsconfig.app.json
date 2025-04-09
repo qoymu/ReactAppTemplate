@@ -30,7 +30,13 @@
       "@widgets/*": ["widgets/*"],
       "@features/*": ["features/*"],
       "@entities/*": ["entities/*"],
-      "@shared/*": ["shared/*"]
+      // "@shared/*": ["shared/*"],
+      "@api/*": ["shared/api/*"],
+      "@constants/*": ["shared/config/constants/*"],
+      "@hooks/*": ["shared/lib/hooks/*"],
+      "@slices/*": ["shared/model/slices/*"],
+      // слово "types" зарезервировано :(
+      "@type/*": ["shared/model/types/*"]
     }
   },
   "include": ["src"]
