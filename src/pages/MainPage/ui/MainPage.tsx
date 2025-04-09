@@ -1,11 +1,15 @@
 import { appRouter } from '@app/router/appRouter';
+import { useAppDispatch } from '@hooks/useAppDispatch';
+import { logOut } from '@slices/authSlice';
 
 import styles from './styles.module.scss';
 
 export const MainPage = () => {
+  // consts
+  const dispatch = useAppDispatch();
+
   const handleLogout = () => {
-    localStorage.removeItem('auth');
-    appRouter.navigate('/login');
+    dispatch(logOut());
   };
 
   const handleNavigateAdditionalPage = () => {

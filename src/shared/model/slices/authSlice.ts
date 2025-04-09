@@ -16,13 +16,17 @@ export const authSlice = createSlice({
   initialState,
   reducers: {
     logIn(state, action: PayloadAction<{ token: string }>) {
-      state.token = action.payload.token;
+      const { token } = action.payload;
+
+      state.token = token;
+      state.isAuthorized = true;
+      localStorage.setItem(localStorageFields.token, token);
     },
 
     logOut(state) {
-      localStorage.removeItem(localStorageFields.token);
       state.token = '';
       state.isAuthorized = false;
+      localStorage.removeItem(localStorageFields.token);
     },
   },
 });

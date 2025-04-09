@@ -8,3 +8,20 @@
 
   row-gap: 16px;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+
+  input {
+    border: 1px solid gray;
+    border-radius: 4px;
+  }
+}
