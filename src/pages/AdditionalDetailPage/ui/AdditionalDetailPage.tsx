@@ -1,14 +1,15 @@
-import { useParams } from 'react-router-dom';
-import { appRouter } from '@app/router/appRouter';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import styles from './styles.module.scss';
 
 export const AdditionalDetailPage = () => {
+  // consts
   const params = useParams();
   const id = params.additionalId;
+  const navigate = useNavigate();
 
   const handleNavigateBack = () => {
-    appRouter.navigate('/additional');
+    navigate('/additional');
   };
 
   return (
