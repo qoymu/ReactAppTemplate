@@ -1,5 +1,7 @@
 import { useGetReleasesQuery } from '@api/releaseApi';
 
+import { RealeaseCard } from './RealeaseCard';
+
 import styles from './styles.module.scss';
 
 export const Realeases = () => {
@@ -15,14 +17,7 @@ export const Realeases = () => {
         {data?.releases && (
           <div className={styles.releases}>
             {data.releases.map((release) => (
-              <div className={styles.release}>
-                <span>Версия: {release.version}</span>
-                <span>Описание: {release.description}</span>
-                <span>Имя файла: {release.file_name}</span>
-                <span>md5sum: {release.md5sum}</span>
-                <span>Дата: {release.date}</span>
-                <span>Приложение: {release.app}</span>
-              </div>
+              <RealeaseCard release={release} key={release.id} />
             ))}
           </div>
         )}

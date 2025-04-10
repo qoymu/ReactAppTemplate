@@ -1,4 +1,4 @@
-interface IRelease {
+export interface IRelease {
   id: number;
   version: string;
   description: string;
