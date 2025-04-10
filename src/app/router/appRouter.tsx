@@ -4,7 +4,7 @@ import { useAppSelector } from '@hooks/useAppSelector';
 import { AuthLayout, DefaultLayout } from '@ui/layouts';
 import { Realeases } from '@pages/Realeases';
 import { Groups } from '@pages/Groups';
-import { AdditionalDetailPage } from '@pages/AdditionalDetailPage';
+import { GroupDetail } from '@pages/GroupDetail';
 import { Auth } from '@pages/Auth';
 
 type WrapperProps = {
@@ -59,7 +59,7 @@ export const appRouter = createHashRouter([
         path: '/groups/:groupId',
         element: (
           <GuestGuard>
-            <AdditionalDetailPage />
+            <GroupDetail />
           </GuestGuard>
         ),
       },
