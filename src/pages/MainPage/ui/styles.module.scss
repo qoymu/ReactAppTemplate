@@ -8,3 +8,26 @@
 
   row-gap: 16px;
 }
+
+.container > span {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.releases {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.release {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+
+  border: 1px solid gray;
+  border-radius: 8px;
+
+  padding: 8px;
+}
