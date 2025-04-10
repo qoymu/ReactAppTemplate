@@ -30,7 +30,7 @@ export const baseQuery: BaseQueryFn<
   FetchBaseQueryMeta
 > = async (args, api, extraOptions) => {
   // Базовый url для всех запросов к api
-  const baseUrl = `https://tbmp-test-server.ru/api/v1/`;
+  const baseUrl = `${import.meta.env.VITE_BASE_URL}/api/v1/`;
 
   return rawBaseQuery(baseUrl)(args, api, extraOptions);
 };
