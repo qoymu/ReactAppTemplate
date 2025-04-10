@@ -3,7 +3,7 @@ import { ReactElement } from 'react';
 import { useAppSelector } from '@hooks/useAppSelector';
 import { AuthLayout, DefaultLayout } from '@ui/layouts';
 import { Realeases } from '@pages/Realeases';
-import { AdditionalPage } from '@pages/AdditionalPage';
+import { Groups } from '@pages/Groups';
 import { AdditionalDetailPage } from '@pages/AdditionalDetailPage';
 import { Auth } from '@pages/Auth';
 
@@ -48,15 +48,15 @@ export const appRouter = createHashRouter([
         ),
       },
       {
-        path: '/additional',
+        path: '/groups',
         element: (
           <GuestGuard>
-            <AdditionalPage />
+            <Groups />
           </GuestGuard>
         ),
       },
       {
-        path: '/additional/:additionalId',
+        path: '/groups/:groupId',
         element: (
           <GuestGuard>
             <AdditionalDetailPage />
