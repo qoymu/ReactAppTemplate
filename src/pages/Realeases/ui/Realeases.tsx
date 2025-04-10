@@ -1,20 +1,10 @@
-import { useAppDispatch } from '@hooks/useAppDispatch';
-import { logOut } from '@slices/authSlice';
 import { useGetReleasesQuery } from '@api/releaseApi';
 
 import styles from './styles.module.scss';
 
 export const Realeases = () => {
-  // consts
-  const dispatch = useAppDispatch();
-
   // api
   const { data, isLoading, isError } = useGetReleasesQuery();
-
-  // handlers
-  const handleLogout = () => {
-    dispatch(logOut());
-  };
 
   return (
     <div className={styles.wrapper}>
@@ -37,9 +27,6 @@ export const Realeases = () => {
           </div>
         )}
       </div>
-      <button type="button" onClick={handleLogout}>
-        Выйти
-      </button>
     </div>
   );
 };

@@ -2,6 +2,15 @@
   display: flex;
 }
 
+.container {
+  flex-grow: 1;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
 .page_content {
   flex-grow: 1;
+  padding: 16px;
 }
