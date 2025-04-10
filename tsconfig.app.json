@@ -36,7 +36,8 @@
       "@hooks/*": ["shared/lib/hooks/*"],
       "@slices/*": ["shared/model/slices/*"],
       // слово "types" зарезервировано :(
-      "@type/*": ["shared/model/types/*"]
+      "@type/*": ["shared/model/types/*"],
+      "@ui/*": ["shared/ui/*"]
     }
   },
   "include": ["src"]

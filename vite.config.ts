@@ -17,6 +17,7 @@ export default defineConfig({
       '@hooks': '/src/shared/lib/hooks',
       '@slices': '/src/shared/model/slices',
       '@type': '/src/shared/model/types',
+      '@ui': '/src/shared/ui',
     },
   },
 });

@@ -1,7 +1,7 @@
 import { Navigate, createHashRouter } from 'react-router-dom';
 import { ReactElement } from 'react';
 import { useAppSelector } from '@hooks/useAppSelector';
-import { DefaultLayout } from '../../shared/ui/layouts';
+import { AuthLayout, DefaultLayout } from '@ui/layouts';
 import { MainPage } from '@pages/MainPage';
 import { AdditionalPage } from '@pages/AdditionalPage';
 import { AdditionalDetailPage } from '@pages/AdditionalDetailPage';
@@ -66,7 +66,7 @@ export const appRouter = createHashRouter([
     ],
   },
   {
-    element: <DefaultLayout />,
+    element: <AuthLayout />,
     children: [
       {
         path: '/login',
