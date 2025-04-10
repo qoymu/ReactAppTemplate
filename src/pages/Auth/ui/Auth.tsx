@@ -6,7 +6,7 @@ import { logIn } from '@slices/authSlice';
 
 import styles from './styles.module.scss';
 
-export const AuthPage = () => {
+export const Auth = () => {
   // consts
   const dispatch = useAppDispatch();
 

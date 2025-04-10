@@ -1,14 +1,12 @@
 import { useAppDispatch } from '@hooks/useAppDispatch';
 import { logOut } from '@slices/authSlice';
-import { useNavigate } from 'react-router-dom';
 import { useGetReleasesQuery } from '@api/releaseApi';
 
 import styles from './styles.module.scss';
 
-export const MainPage = () => {
+export const Realeases = () => {
   // consts
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
 
   // api
   const { data, isLoading, isError } = useGetReleasesQuery();
@@ -16,10 +14,6 @@ export const MainPage = () => {
   // handlers
   const handleLogout = () => {
     dispatch(logOut());
-  };
-
-  const handleNavigateAdditionalPage = () => {
-    navigate('/additional');
   };
 
   return (
@@ -43,9 +37,6 @@ export const MainPage = () => {
           </div>
         )}
       </div>
-      <button type="button" onClick={handleNavigateAdditionalPage}>
-        Доп. страница
-      </button>
       <button type="button" onClick={handleLogout}>
         Выйти
       </button>

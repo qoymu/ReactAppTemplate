@@ -2,10 +2,10 @@ import { Navigate, createHashRouter } from 'react-router-dom';
 import { ReactElement } from 'react';
 import { useAppSelector } from '@hooks/useAppSelector';
 import { AuthLayout, DefaultLayout } from '@ui/layouts';
-import { MainPage } from '@pages/MainPage';
+import { Realeases } from '@pages/Realeases';
 import { AdditionalPage } from '@pages/AdditionalPage';
 import { AdditionalDetailPage } from '@pages/AdditionalDetailPage';
-import { AuthPage } from '@pages/AuthPage';
+import { Auth } from '@pages/Auth';
 
 type WrapperProps = {
   children: ReactElement;
@@ -33,17 +33,17 @@ export const appRouter = createHashRouter([
   {
     path: '/',
     element: <DefaultLayout />,
-    errorElement: <Navigate to="/main" state />,
+    errorElement: <Navigate to="/realeases" />,
     children: [
       {
         index: true,
-        element: <Navigate to="/main" replace />,
+        element: <Navigate to="/realeases" replace />,
       },
       {
-        path: '/main',
+        path: '/realeases',
         element: (
           <GuestGuard>
-            <MainPage />
+            <Realeases />
           </GuestGuard>
         ),
       },
@@ -72,7 +72,7 @@ export const appRouter = createHashRouter([
         path: '/login',
         element: (
           <AuthGuard>
-            <AuthPage />
+            <Auth />
           </AuthGuard>
         ),
       },
