@@ -1,5 +1,5 @@
 export interface IUserAuthApiResponse {
-  token: string;
+  auth_token: string;
 }
 
 export interface IUserAuthRequestParams {

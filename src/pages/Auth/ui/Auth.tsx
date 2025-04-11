@@ -24,7 +24,11 @@ export const Auth = () => {
     login(userData)
       .unwrap()
       .then((response) => {
-        dispatch(logIn({ token: response.token }));
+        const { auth_token } = response;
+
+        if (auth_token) {
+          dispatch(logIn({ token: auth_token }));
+        }
       })
       .catch(() => {});
   };
