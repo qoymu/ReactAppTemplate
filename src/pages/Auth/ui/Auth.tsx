@@ -3,7 +3,6 @@ import { IUserAuthRequestParams } from '@type/authTypes';
 import { useState } from 'react';
 import { useAppDispatch } from '@hooks/useAppDispatch';
 import { logIn } from '@slices/authSlice';
-import { useResetApiOnMount } from '../lib/hooks/useResetApiOnMount';
 
 import styles from './styles.module.scss';
 
@@ -45,9 +44,6 @@ export const Auth = () => {
       };
     });
   };
-
-  //hooks
-  useResetApiOnMount();
 
   return (
     <div className={styles.wrapper}>

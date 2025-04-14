@@ -1,11 +1,20 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { Action, configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
-import { AppReducer } from './AppReducer';
+import { AppReducer, AppReducerType } from './AppReducer';
 import { baseApi } from '@api/base/baseApi';
 
 export function makeStore() {
+  const rootReducer = (state: AppReducerType | undefined, action: Action) => {
+    // Обнуляем стор при логауте
+    if (action.type === 'auth/logOut') {
+      return AppReducer(undefined, action);
+    }
+
+    return AppReducer(state, action);
+  };
+
   const store = configureStore({
-    reducer: AppReducer,
+    reducer: rootReducer,
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware().concat(baseApi.middleware),
   });
