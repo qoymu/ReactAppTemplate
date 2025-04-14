@@ -24,7 +24,7 @@ const AuthGuard = ({ children }: WrapperProps) => {
   // Если авторизован - редирект на главную
   const { isAuthorized } = useAppSelector((state) => state.auth);
 
-  if (isAuthorized) return <Navigate to="/" />;
+  if (isAuthorized) return <Navigate to="/realeases" />;
 
   return children;
 };
@@ -35,10 +35,6 @@ export const appRouter = createHashRouter([
     element: <DefaultLayout />,
     errorElement: <Navigate to="/realeases" />,
     children: [
-      {
-        index: true,
-        element: <Navigate to="/realeases" replace />,
-      },
       {
         path: '/realeases',
         element: (
@@ -68,6 +64,10 @@ export const appRouter = createHashRouter([
   {
     element: <AuthLayout />,
     children: [
+      {
+        index: true,
+        element: <Navigate to="/login" replace />,
+      },
       {
         path: '/login',
         element: (

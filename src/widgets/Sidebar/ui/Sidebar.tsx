@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { useGetUserQuery } from '@api/userApi';
 
 import styles from './styles.module.scss';
 
@@ -8,6 +9,10 @@ const PAGES = [
 ];
 
 export const Sidebar = () => {
+  const { data: user } = useGetUserQuery();
+
+  console.log(user);
+
   return (
     <div className={styles.wrapper}>
       <nav className={styles.list}>

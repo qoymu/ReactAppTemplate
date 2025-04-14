@@ -17,7 +17,7 @@ const rawBaseQuery = (baseUrl: string) =>
       if (token) {
         headers.set('authorization', `Token ${token}`);
       }
-      headers.set('Access-Control-Allow-Origin', '*');
+
       return headers;
     },
   });
