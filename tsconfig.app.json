@@ -40,5 +40,5 @@
       "@ui/*": ["shared/ui/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "./assets.d.ts"]
 }
